@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import CommunityPage from "./pages/CommunityPage";
 import ChallengePage from "./pages/ChallengePage";
 import GardenPage from "./pages/GardenPage";
+import ProposeChallengePage from "./pages/ProposeChallengePage";
 // import { MobileCamera } from "./components/MobileCamera";
 
 function App() {
@@ -45,6 +46,10 @@ function App() {
                 <Route
                   path="/challenge/:challengeId"
                   element={<ChallengePage />}
+                />
+                <Route
+                  path="/propose-challenge"
+                  element={<ProposeChallengePage />}
                 />
                 <Route path="/my-garden" element={<MyGardenPage />} />
               </Routes>

@@ -14,7 +14,14 @@ export default function ChallengesPage() {
       <Heading as="h1" size="xl" mb={6} textAlign="center">
         Challenges
       </Heading>
-      <Button colorScheme="green" variant="solid" size="lg" mb={6}>
+      <Button
+        colorScheme="green"
+        variant="solid"
+        size="lg"
+        mb={6}
+        as="a"
+        href={`/propose-challenge`}
+      >
         Propose a Challenge
       </Button>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
