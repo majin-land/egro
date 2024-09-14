@@ -3,13 +3,13 @@ import { Box, SimpleGrid, Image, Heading, Text } from "@chakra-ui/react";
 const gardens = [
     {
         id: 1,
-        image: "/path/to/garden1.jpg",
+        image: "/img/gardens/1.webp",
         title: "Urban Garden #1",
         description: "A beautiful rooftop garden with fresh vegetables.",
     },
     {
         id: 2,
-        image: "/path/to/garden2.jpg",
+        image: "/img/gardens/1.webp",
         title: "Urban Garden #2",
         description: "A sustainable garden in the heart of the city.",
     },

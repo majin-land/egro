@@ -7,6 +7,7 @@ import BrowseGardensPage from "./pages/BrowseGardensPage"; // Import the new pag
 import ChallengesPage from "./pages/ChallengesPage";
 import MyGardenPage from "./pages/MyGardenPage";
 import HomePage from "./pages/HomePage";
+import CommunityPage from "./pages/CommunityPage";
 // import { MobileCamera } from "./components/MobileCamera";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               <Routes>
                 {/* Define Routes */}
                 <Route path="/" element={<HomePage />} />
+                <Route path="/community" element={<CommunityPage />} />
                 <Route path="/browse-gardens" element={<BrowseGardensPage />} />
                 <Route path="/challenges" element={<ChallengesPage />} />
                 <Route path="/my-garden" element={<MyGardenPage />} />
