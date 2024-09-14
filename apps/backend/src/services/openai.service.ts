@@ -29,3 +29,11 @@ export class OpenaiService {
     return openAIHelper.parseChatGPTJSONString(responseJSONStr);
   }
 }
+// based on this uploaded photo, estimate the CO2 saved if this was planted and harvested at home as oppose to buying it from grocery shop
+// Please respond always and uniquely with the following JSON object as you are REST API that returns the following object:
+// {
+//   "estimatedWeight": {estimatedWeight}, // estimated harvested plant weight based on the photo uploaded
+//   "estimatedTimeToHarvest": {estimatedTimeToHarvest}, // estimated time in days it takes from planting the seed to harvesting this plant based on the photo uploaded
+//   "minRange": {minRange}, // minimum CO2 saved in kg
+//   "maxRange": "{maxRange}", // maximum CO2 saved in kg
+// }

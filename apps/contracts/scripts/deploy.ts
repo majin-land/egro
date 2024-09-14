@@ -64,9 +64,9 @@ export async function deploy() {
 
     console.log('To start using the contract, we need to set the rewards amount and switch to the next cycle');
 
-    const rewardsAmountResult = await (await ecoEarnInstance.setRewardsAmount(1000000000000000000000n)).wait();
+    const rewardsAmountResult = await (await ecoEarnInstance.setRewardsAmount(50000000000000000000n)).wait();
 
-    console.log('Rewards set reward amount to 1000');
+    console.log('Rewards set reward amount to 50');
 
     if (rewardsAmountResult == null || rewardsAmountResult.status !== 1) {
         throw new Error('Failed to set rewards amount');
