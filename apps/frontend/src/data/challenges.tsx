@@ -1,10 +1,12 @@
+//TODO: Plug in to data source
+
 export const challenges = [
   {
     id: 1,
     image: "/img/challenges/most_popular.webp",
     title: "Most Popular Garden (September)",
     description: "Get the most likes on your garden to win.",
-    bounty: "1000",
+    bounty: "600",
     start_date: "1/9/2024",
     end_date: "30/9/2024",
   },
@@ -19,9 +21,9 @@ export const challenges = [
   },
   {
     id: 3,
-    image: "/img/challenges/best.webp",
-    title: "Best Balcony Garden",
-    description: "Impress with a creative and sustainable balcony garden.",
+    image: "/img/challenges/office.webp",
+    title: "Best Office Garden",
+    description: "Inspirational office greens.",
     bounty: "800",
     start_date: "1/11/2024",
     end_date: "30/11/2024",
@@ -40,7 +42,7 @@ export const challenges = [
     image: "/img/challenges/rookie.webp",
     title: "Rookie of the Month",
     description: "New gardeners can win by sharing their progress.",
-    bounty: "700",
+    bounty: "300",
     start_date: "1/9/2024",
     end_date: "30/9/2024",
   },
@@ -49,7 +51,7 @@ export const challenges = [
     image: "/img/challenges/vertical.webp",
     title: "Best Vertical Garden",
     description: "Show your creativity with a space-saving vertical garden.",
-    bounty: "900",
+    bounty: "800",
     start_date: "1/10/2024",
     end_date: "31/10/2024",
   },
@@ -67,7 +69,7 @@ export const challenges = [
     image: "/img/challenges/tech.webp",
     title: "High Tech Challenge",
     description: "Science your garden to the moon.",
-    bounty: "1200",
+    bounty: "900",
     start_date: "1/12/2024",
     end_date: "31/12/2024",
   },

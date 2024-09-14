@@ -1,50 +1,13 @@
-import { Box, SimpleGrid, Image, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  SimpleGrid,
+  Image,
+  Heading,
+  Text,
+  Button,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
-const gardens = [
-  {
-    id: 1,
-    image: "/img/gardens/garden1.webp",
-    title: "Urban Garden #1",
-    description: "A beautiful rooftop garden with fresh vegetables.",
-    wallet: "0xaC3824073E9ddA5c676D131457FeDbF2799409aB",
-  },
-  {
-    id: 2,
-    image: "/img/gardens/garden2.webp",
-    title: "Urban Garden #2",
-    description: "A sustainable garden in the heart of the city.",
-    wallet: "0xaC3824073E9ddA5c676D131457FeDbF2799409aB",
-  },
-  {
-    id: 3,
-    image: "/img/gardens/garden3.webp",
-    title: "Urban Garden #1",
-    description: "A beautiful rooftop garden with fresh vegetables.",
-    wallet: "0xaC3824073E9ddA5c676D131457FeDbF2799409aB",
-  },
-  {
-    id: 4,
-    image: "/img/gardens/garden4.webp",
-    title: "Urban Garden #1",
-    description: "A beautiful rooftop garden with fresh vegetables.",
-    wallet: "0xaC3824073E9ddA5c676D131457FeDbF2799409aB",
-  },
-  {
-    id: 5,
-    image: "/img/gardens/garden5.webp",
-    title: "Urban Garden #1",
-    description: "A beautiful rooftop garden with fresh vegetables.",
-    wallet: "0xaC3824073E9ddA5c676D131457FeDbF2799409aB",
-  },
-  {
-    id: 6,
-    image: "/img/gardens/garden6.webp",
-    title: "Urban Garden #1",
-    description: "A beautiful rooftop garden with fresh vegetables.",
-    wallet: "0xaC3824073E9ddA5c676D131457FeDbF2799409aB",
-  },
-];
+import { gardens } from "../data/gardens";
 
 export default function BrowseGardens() {
   return (
@@ -65,13 +28,19 @@ export default function BrowseGardens() {
               <Heading as="h3" size="md" mb={2}>
                 {garden.title}
               </Heading>
+              <Heading as="h4" size="sm" mb={1}>
+                {garden.country}
+              </Heading>
               <Text>{garden.description}</Text>
-              <Link
-                to={`https://explore-testnet.vechain.org/accounts/${garden.wallet}`}
-                target="_blank"
+              <Text>Posted: {garden.date}</Text>
+              <Button
+                colorScheme="green"
+                variant="solid"
+                as="a"
+                href={`/garden/${garden.id}`}
               >
-                Verify
-              </Link>
+                Explore
+              </Button>
             </Box>
           </Box>
         ))}

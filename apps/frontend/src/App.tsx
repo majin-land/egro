@@ -9,6 +9,7 @@ import MyGardenPage from "./pages/MyGardenPage";
 import HomePage from "./pages/HomePage";
 import CommunityPage from "./pages/CommunityPage";
 import ChallengePage from "./pages/ChallengePage";
+import GardenPage from "./pages/GardenPage";
 // import { MobileCamera } from "./components/MobileCamera";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/community" element={<CommunityPage />} />
                 <Route path="/browse-gardens" element={<BrowseGardensPage />} />
+                <Route path="/garden/:gardenId" element={<GardenPage />} />
                 <Route path="/challenges" element={<ChallengesPage />} />
                 <Route
                   path="/challenge/:challengeId"
