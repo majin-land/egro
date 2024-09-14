@@ -1,14 +1,9 @@
 import { DAppKitProvider } from "@vechain/dapp-kit-react";
 import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
-import {
-  Dropzone,
-  Footer,
-  InfoCard,
-  Instructions,
-  Navbar,
-  SubmissionModal,
-} from "./components";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Footer, InfoCard, Instructions, Navbar, SubmissionModal } from "./components";
 import { lightTheme } from "./theme";
+import BrowseGardens from "./components/pages/BrowseGardens"; // Import the new page
 
 function App() {
   return (
@@ -20,27 +15,31 @@ function App() {
         nodeUrl="https://testnet.vechain.org/"
         logLevel={"DEBUG"}
       >
-        <Navbar />
-        <Flex flex={1}>
-          <Container
-            mt={{ base: 4, md: 10 }}
-            maxW={"container.xl"}
-            mb={{ base: 4, md: 10 }}
-            display={"flex"}
-            flex={1}
-            alignItems={"center"}
-            justifyContent={"flex-start"}
-            flexDirection={"column"}
-          >
-            <InfoCard />
-            <Instructions />
-            <Dropzone />
-          </Container>
-        </Flex>
-        <Footer />
-
-        {/* MODALS  */}
-        <SubmissionModal />
+        <Router>
+          <Navbar />
+          <Flex flex={1}>
+            <Container
+              mt={{ base: 4, md: 10 }}
+              maxW={"container.xl"}
+              mb={{ base: 4, md: 10 }}
+              display={"flex"}
+              flex={1}
+              alignItems={"center"}
+              justifyContent={"flex-start"}
+              flexDirection={"column"}
+            >
+              <Routes>
+                {/* Define Routes */}
+                <Route path="/" element={<InfoCard />} />
+                <Route path="/browse-gardens" element={<BrowseGardens />} />
+              </Routes>
+              <Instructions />
+            </Container>
+          </Flex>
+          <Footer />
+          {/* MODALS  */}
+          <SubmissionModal />
+        </Router>
       </DAppKitProvider>
     </ChakraProvider>
   );

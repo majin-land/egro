@@ -12,19 +12,20 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
+    "@egro/utils": "*",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@egro/utils": "*",
     "@vechain/dapp-kit-react": "^1.0.12",
     "framer-motion": "^11.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
-    "react-lottie": "^1.2.4"
+    "react-lottie": "^1.2.4",
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
-    "@fingerprintjs/fingerprintjs": "^4.3.0",
     "@egro/typescript-config": "*",
+    "@fingerprintjs/fingerprintjs": "^4.3.0",
     "@types/device-uuid": "^1.0.3",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",

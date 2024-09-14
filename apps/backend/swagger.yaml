@@ -3,19 +3,19 @@ tags:
     description: submission API
 
 paths:
-  /submitReceipt:
+  /submitPhoto:
     # [POST] submission
     post:
       tags:
         - submission
-      summary: Validate Receipt
+      summary: Validate Photo
       parameters:
         - name: body
           in: body
           description: user Data
           required: true
           schema:
-            $ref: '#/definitions/submitReceipt'
+            $ref: '#/definitions/submitPhoto'
       responses:
         200:
           description: 'Submission response'
@@ -28,7 +28,7 @@ paths:
 
 # definitions
 definitions:
-  submitReceipt:
+  submitPhoto:
     type: object
     required:
       - image

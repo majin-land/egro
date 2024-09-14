@@ -1,4 +1,5 @@
 import { Box, Button, Container, HStack, Image } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { ConnectWalletButton } from "./ConnectWalletButton";
 export const Navbar = () => {
   return (
@@ -28,7 +29,9 @@ export const Navbar = () => {
         <HStack flex={2} spacing={6} justifyContent={"center"}>
           <Button variant="link">Home</Button>
           <Button variant="link">Challenges</Button>
-          <Button variant="link">Browse Gardens</Button>
+          <Button as={RouterLink} to="/browse-gardens" variant="link">
+            Browse Gardens
+          </Button>
           <Button variant="link">My Garden</Button>
         </HStack>
 

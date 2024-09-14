@@ -122,7 +122,7 @@ yarn dev
 
 At this point you can access the frontend at [http://localhost:8082/](http://localhost:8082/).
 
-Start uploading a receipt!
+Start uploading photos!
 
 ## Deploying on Testnet 🚀
 

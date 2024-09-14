@@ -6,16 +6,22 @@ const Steps = [
     icon: "/img/steps/step1.webp",
     title: "Plant seeds",
     description: "Grow your favorite consumable greens.",
+    rewards: '0.5',
+    tag: 'a'
   },
   {
     icon: "/img/steps/step2.webp",
     title: "Upload photos",
     description: "Upload the growth stages photos for AI verification.",
+    rewards: '1',
+    tag: ''
   },
   {
     icon: "/img/steps/step3.webp",
-    title: "Earn rewards",
+    title: "Harvest rewards",
     description: "Harvest your greens and Earn B3TR.",
+    rewards: '2',
+    tag: ''
   },
 ];
 

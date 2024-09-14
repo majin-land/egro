@@ -9,7 +9,7 @@ export class SubmissionController {
   public openai = Container.get(OpenaiService);
   public contracts = Container.get(ContractsService);
 
-  public submitReceipt = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  public submitPhoto = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const body: Omit<Submission, 'timestamp'> = req.body;
 

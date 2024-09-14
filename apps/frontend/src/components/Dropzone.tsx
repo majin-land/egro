@@ -4,7 +4,7 @@ import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 import { ScanIcon } from "./Icon";
 import { blobToBase64, getDeviceId, resizeImage } from "../util";
 import { useWallet } from "@vechain/dapp-kit-react";
-import { submitReceipt } from "../networking";
+import { submitPhoto } from "../networking";
 import { useDisclosure, useSubmission } from "../hooks";
 
 export const Dropzone = () => {
@@ -46,7 +46,7 @@ export const Dropzone = () => {
       const deviceID = await getDeviceId();
 
       try {
-        const response = await submitReceipt({
+        const response = await submitPhoto({
           address: account,
           deviceID,
           image: base64Image,
@@ -56,7 +56,7 @@ export const Dropzone = () => {
 
         setResponse(response);
       } catch (error) {
-        alert("Error submitting receipt");
+        alert("Error submitting photo");
       } finally {
         setIsLoading(false);
       }
