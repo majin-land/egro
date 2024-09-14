@@ -1,15 +1,12 @@
 import { DAppKitProvider } from "@vechain/dapp-kit-react";
 import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {
-  Footer,
-  InfoCard,
-  Instructions,
-  Navbar,
-  SubmissionModal,
-} from "./components";
+import { Footer, Navbar, SubmissionModal } from "./components";
 import { lightTheme } from "./theme";
-import BrowseGardens from "./components/pages/BrowseGardens"; // Import the new page
+import BrowseGardensPage from "./pages/BrowseGardensPage"; // Import the new page
+import ChallengesPage from "./pages/ChallengesPage";
+import MyGardenPage from "./pages/MyGardenPage";
+import HomePage from "./pages/HomePage";
 // import { MobileCamera } from "./components/MobileCamera";
 
 function App() {
@@ -37,10 +34,11 @@ function App() {
             >
               <Routes>
                 {/* Define Routes */}
-                <Route path="/" element={<InfoCard />} />
-                <Route path="/browse-gardens" element={<BrowseGardens />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/browse-gardens" element={<BrowseGardensPage />} />
+                <Route path="/challenges" element={<ChallengesPage />} />
+                <Route path="/my-garden" element={<MyGardenPage />} />
               </Routes>
-              <Instructions />
             </Container>
           </Flex>
           <Footer />
