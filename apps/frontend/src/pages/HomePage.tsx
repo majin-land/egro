@@ -7,7 +7,24 @@ export default function HomePage() {
             <Card w={"full"}>
                 <Box p={3}>
                     <VStack w={"full"} spacing={{ base: 2, md: 4 }}>
-                        <Image src="/img/bg/bg_home.webp" borderRadius={16} />
+                        <Box
+                            position="relative"
+                            width="100%"
+                            paddingTop="36.25%"  // aspect ratio
+                            borderRadius={16}
+                            overflow="hidden"
+                        >
+                            <Image
+                                src="/img/bg/bg_home.webp"
+                                objectFit="cover"
+                                position="absolute"
+                                top={0}
+                                left={0}
+                                width="100%"
+                                height="100%"
+                            />
+                        </Box>
+
                         <Flex
                             w={"full"}
                             justifyContent={"center"} // Center horizontally
