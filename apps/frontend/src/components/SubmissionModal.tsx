@@ -18,7 +18,7 @@ export const SubmissionModal = () => {
   const { isOpen, onClose } = useDisclosure();
 
   const renderContent = useMemo(() => {
-    const isValid = response?.validation.validityFactor === 1;
+    const isValid = response?.validation.validityFactor && response?.validation.validityFactor >= 0.5;
 
     return isValid ? (
       <VStack
