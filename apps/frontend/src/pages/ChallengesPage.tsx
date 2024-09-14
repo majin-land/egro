@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Image, Heading, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Image, Heading, Text, Button } from "@chakra-ui/react";
 
 const challenges = [
     {
@@ -57,7 +57,7 @@ const challenges = [
     },
     {
         id: 7,
-        image: "/img/challenges/tomato.webp",
+        image: "/img/challenges/creative.webp",
         title: "Most Creative Planters",
         description: "Get inventive with your garden planters to stand out.",
         bounty: "750",
@@ -91,6 +91,9 @@ export default function ChallengesPage() {
             <Heading as="h1" size="xl" mb={6} textAlign="center">
                 Challenges
             </Heading>
+            <Button colorScheme="green" variant="solid" size="lg" mb={6}>
+                Propose a Challenge
+            </Button>
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
                 {challenges.map((challenge) => (
                     <Box key={challenge.id} borderWidth="1px" borderRadius="lg" overflow="hidden">
