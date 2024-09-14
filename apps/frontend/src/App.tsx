@@ -1,9 +1,16 @@
 import { DAppKitProvider } from "@vechain/dapp-kit-react";
 import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Footer, InfoCard, Instructions, Navbar, SubmissionModal } from "./components";
+import {
+  Footer,
+  InfoCard,
+  Instructions,
+  Navbar,
+  SubmissionModal,
+} from "./components";
 import { lightTheme } from "./theme";
 import BrowseGardens from "./components/pages/BrowseGardens"; // Import the new page
+// import { MobileCamera } from "./components/MobileCamera";
 
 function App() {
   return (
