@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
           lineHeight="17px"
           color="#8c8c8c"
         >
-          2024 VeBetterDAO. All rights reserved.
+          2024 Egro. All rights reserved.
         </Text>
         <HStack spacing={4}>
           <Link href={PRIVACY_POLICY_LINK} isExternal>
@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
   );
 
   return (
-    <Flex bgColor={"#191714"}>
+    <Flex bgColor={"#462909"}>
       <Container
         maxW={"container.xl"}
         display={"flex"}

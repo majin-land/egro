@@ -19,7 +19,7 @@ const themeConfig = {
         _light: "#1E1E1E",
       },
       "chakra-body-bg": {
-        _light: "#F7F7F7",
+        _light: "#F7ffF7",
       },
     },
   },

@@ -3,26 +3,26 @@ import { Step } from "./Step";
 
 const Steps = [
   {
-    icon: "/steps/1.svg",
-    title: "Purchase eco-friendly products",
-    description: "Buy products that are eco-friendly and sustainable.",
+    icon: "/img/steps/step1.webp",
+    title: "Plant seeds",
+    description: "Grow your favorite consumable greens.",
   },
   {
-    icon: "/steps/2.svg",
-    title: "Upload the receipt",
-    description: "Upload your receipt and AI will verify the products.",
+    icon: "/img/steps/step2.webp",
+    title: "Upload photos",
+    description: "Upload the growth stages photos for AI verification.",
   },
   {
-    icon: "/steps/3.svg",
+    icon: "/img/steps/step3.webp",
     title: "Earn rewards",
-    description: "Earn B3TR for purchasing eco-friendly products.",
+    description: "Harvest your greens and Earn B3TR.",
   },
 ];
 
 export const Instructions = () => {
   return (
     <Card mt={3} w={"full"}>
-      <Flex p={{ base: 4 }} w="100%" direction={{ base: "column", md: "row" }}>
+      <Flex p={{ base: 4 }} w="100%" direction={{ base: "column", md: "row" }} bgColor={"#dfd3a0"}>
         {Steps.map((step, index) => (
           <Step key={index} {...step} />
         ))}
