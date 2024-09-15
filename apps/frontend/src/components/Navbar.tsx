@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Box,
   Button,
@@ -15,12 +16,16 @@ import {
   VStack,
   useBreakpointValue,
   useDisclosure,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
-import { ConnectWalletButton } from "./ConnectWalletButton";
-import { HamburgerIcon } from "@chakra-ui/icons";
-import { useAccount } from "../hooks/useAccount";
+import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useConnex } from "@vechain/dapp-kit-react";
+
+import { useAccount } from "../hooks/useAccount";
+import { ConnectWalletButton } from "./ConnectWalletButton";
 
 export const Navbar = () => {
   const { setThor } = useAccount()
@@ -61,10 +66,29 @@ export const Navbar = () => {
         {/* Desktop Menu */}
         {!isMobile && (
           <HStack flex={2} spacing={6} justifyContent={"center"}>
-            <Button as={RouterLink} variant="link" to="/">Home</Button>
-            <Button as={RouterLink} to="/community" variant="link">
-              Community
+            <Button as={RouterLink} variant="link" to="/">
+              Home
             </Button>
+            <Menu>
+              <MenuButton
+                as={Button}
+                variant="link"
+                rightIcon={<ChevronDownIcon />}
+              >
+                Community
+              </MenuButton>
+              <MenuList>
+                <MenuItem as={RouterLink} to="/community/share-harvest">
+                  Share Harvest
+                </MenuItem>
+                <MenuItem as={RouterLink} to="/community/learning">
+                  Learning
+                </MenuItem>
+                <MenuItem as={RouterLink} to="/community/events">
+                  Events
+                </MenuItem>
+              </MenuList>
+            </Menu>
             <Button as={RouterLink} to="/challenges" variant="link">
               Challenges
             </Button>
@@ -105,16 +129,56 @@ export const Navbar = () => {
               <Button as={RouterLink} variant="link" to="/" onClick={onClose}>
                 Home
               </Button>
-              <Button as={RouterLink} variant="link" to="/community" onClick={onClose}>
-                Community
-              </Button>
-              <Button as={RouterLink} variant="link" to="/challenges" onClick={onClose}>
+              <Menu>
+                <MenuButton as={Button} variant="link" onClick={onOpen}>
+                  Community
+                </MenuButton>
+                <MenuList>
+                  <MenuItem
+                    as={RouterLink}
+                    to="/community/share-harvest"
+                    onClick={onClose}
+                  >
+                    Share Harvest
+                  </MenuItem>
+                  <MenuItem
+                    as={RouterLink}
+                    to="/community/learning"
+                    onClick={onClose}
+                  >
+                    Learning
+                  </MenuItem>
+                  <MenuItem
+                    as={RouterLink}
+                    to="/community/events"
+                    onClick={onClose}
+                  >
+                    Events
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+              <Button
+                as={RouterLink}
+                variant="link"
+                to="/challenges"
+                onClick={onClose}
+              >
                 Challenges
               </Button>
-              <Button as={RouterLink} variant="link" to="/browse-gardens" onClick={onClose}>
+              <Button
+                as={RouterLink}
+                variant="link"
+                to="/browse-gardens"
+                onClick={onClose}
+              >
                 Browse Gardens
               </Button>
-              <Button as={RouterLink} variant="link" to="/my-garden" onClick={onClose}>
+              <Button
+                as={RouterLink}
+                variant="link"
+                to="/my-garden"
+                onClick={onClose}
+              >
                 My Garden
               </Button>
             </VStack>

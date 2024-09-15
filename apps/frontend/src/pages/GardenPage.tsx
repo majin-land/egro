@@ -38,6 +38,18 @@ export default function GardenPage() {
         />
       </Box>
       <Text>{garden.description}</Text>
+      <Button
+        colorScheme="green"
+        variant="solid"
+        as="a"
+        target="_blank"
+        href={`https://explore-testnet.vechain.org/accounts/${garden.wallet}/txs`}
+      >
+        View on VeChain Explorer
+      </Button>
+      <Heading as="h2" size="xl" mb={6} textAlign="center" mt={5}>
+        Gallery
+      </Heading>
     </Box>
   );
 }
