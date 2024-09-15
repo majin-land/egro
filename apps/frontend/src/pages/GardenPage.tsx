@@ -1,6 +1,8 @@
-import { Box, Image, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Image, Heading, Text, Button, SimpleGrid } from "@chakra-ui/react";
 import { gardensDataMap } from "../data/gardens";
 import { useParams } from "react-router-dom";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
+import { gallery } from "../data/gallery";
 
 export default function GardenPage() {
   const { gardenId } = useParams<{ gardenId: any }>();
@@ -13,19 +15,20 @@ export default function GardenPage() {
   }
 
   return (
-    <Box p={6} maxW={"container.xl"} mx={"auto"}>
+    <Box p={6} maxW={"container.xl"} mx={"auto"} textAlign="center">
       <Heading as="h1" size="xl" mb={6} textAlign="center">
         Garden: {garden.title}
       </Heading>
       <Heading as="h2" size="l" mb={6} textAlign="center">
-        Date: {garden.date}
+        Last Updated: {garden.date}
       </Heading>
       <Box
         position="relative"
-        width="100%"
-        paddingTop="100%" // aspect ratio
+        width="50%"
+        paddingTop="50%" // aspect ratio
         borderRadius={16}
         overflow="hidden"
+        margin={"auto"}
       >
         <Image
           src={garden.image}
@@ -50,6 +53,24 @@ export default function GardenPage() {
       <Heading as="h2" size="xl" mb={6} textAlign="center" mt={5}>
         Gallery
       </Heading>
+
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+        {gallery.map((gallery: { image: string | undefined; date: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
+          <Box
+            key={garden.id}
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+          >
+            <Image src={gallery.image} />
+            <Box p={6}>
+              <Text>
+                {gallery.date}
+              </Text>
+            </Box>
+          </Box>
+        ))}
+      </SimpleGrid>
     </Box>
   );
 }
