@@ -1,1 +1,1 @@
-export const backendURL = "http://localhost:3000"; // TODO change to your backend URL
+export const backendURL = "https://egro-gateway.majin.land"; // TODO change to your backend URL
