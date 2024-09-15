@@ -6,9 +6,11 @@ import { blobToBase64, getDeviceId, resizeImage } from "../util";
 import { useWallet } from "@vechain/dapp-kit-react";
 import { submitPhoto } from "../networking";
 import { useDisclosure, useSubmission } from "../hooks";
+import { useAccount } from "../hooks/useAccount";
 
 export const Dropzone = () => {
   const { account } = useWallet();
+  const { fetchB3TRBalance } = useAccount()
 
   const { setIsLoading, setResponse } = useSubmission();
   const { onOpen } = useDisclosure();
@@ -52,16 +54,15 @@ export const Dropzone = () => {
           image: base64Image,
         });
 
-        console.log(response);
-
         setResponse(response);
+        fetchB3TRBalance()
       } catch (error) {
         alert("Error submitting photo");
       } finally {
         setIsLoading(false);
       }
     },
-    [account, onOpen, setIsLoading, setResponse],
+    [account, onOpen, setIsLoading, setResponse, fetchB3TRBalance],
   );
 
   return (

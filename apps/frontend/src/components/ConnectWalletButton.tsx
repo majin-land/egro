@@ -1,12 +1,19 @@
-import { Button, Fade, HStack, Text } from "@chakra-ui/react";
+import { Button, Fade, HStack, Text, Image } from "@chakra-ui/react";
 import { useWallet, useWalletModal } from "@vechain/dapp-kit-react";
 import { FaWallet } from "react-icons/fa6";
-import { AddressIcon } from "./Icon";
-import { humanAddress } from "@egro/utils/FormattingUtils";
+import { useEffect } from "react";
+import { useAccount } from "../hooks/useAccount";
 
 export const ConnectWalletButton = () => {
+  const { balance, setAccount, fetchB3TRBalance } = useAccount()
   const { account } = useWallet();
   const { open } = useWalletModal();
+
+  useEffect(() => {
+    if (!account) return
+    setAccount(account)
+    fetchB3TRBalance()
+  }, [account])
 
   if (!account)
     return (
@@ -30,11 +37,13 @@ export const ConnectWalletButton = () => {
         rounded={"full"}
         color="black"
         size="md"
-        bg="rgba(235, 236, 252, 1)"
+        bg="#C0F17E"
+        pl={2}
+        pr={2}
       >
-        <HStack spacing={2}>
-          <AddressIcon address={account} boxSize={4} rounded={"full"} />
-          <Text fontWeight={"400"}>{humanAddress(account, 4, 6)}</Text>
+        <HStack spacing={1}>
+          <Image src={"img/ico/token-icon_b3tr.webp"} height={8} display={"inline"} verticalAlign={"middle"} />
+          <Text fontWeight={"400"} minWidth={10} textAlign="left">{balance}</Text>
         </HStack>
       </Button>
     </Fade>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import {
   Box,
   Button,
@@ -19,10 +19,18 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { ConnectWalletButton } from "./ConnectWalletButton";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { useAccount } from "../hooks/useAccount";
+import { useConnex } from "@vechain/dapp-kit-react";
 
 export const Navbar = () => {
+  const { setThor } = useAccount()
+  const { thor } = useConnex();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
+
+  useEffect(() => {
+    setThor(thor)
+  }, [setThor, thor])
 
   return (
     <Box
